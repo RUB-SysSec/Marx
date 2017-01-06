@@ -1,0 +1,191 @@
+Index: priv/ir_defs.c
+===================================================================
+--- priv/ir_defs.c	(revision 3203)
++++ priv/ir_defs.c	(working copy)
+@@ -1669,7 +1669,9 @@
+ /*--- Constructors                                            ---*/
+ /*---------------------------------------------------------------*/
+ 
++Bool _allocate_on_heap = 0;
+ 
++
+ /* Constructors -- IRConst */
+ 
+ IRConst* IRConst_U1 ( Bool bit )
+@@ -2446,6 +2448,18 @@
+    return dst;
+ }
+ 
++IRSB* deepCopyIRSB_Heap ( const IRSB* bb )
++{
++   IRSB *bb2;
++   Bool previous = _allocate_on_heap;
++
++   _allocate_on_heap = 1;
++   bb2 = deepCopyIRSB(bb);
++
++   _allocate_on_heap = previous;
++   return bb2;
++}
++
+ IRSB* deepCopyIRSB ( const IRSB* bb )
+ {
+    Int      i;
+Index: priv/main_util.c
+===================================================================
+--- priv/main_util.c	(revision 3203)
++++ priv/main_util.c	(working copy)
+@@ -39,7 +39,75 @@
+ #include "main_globals.h"
+ #include "main_util.h"
+ 
++#include <stdlib.h>
+ 
++extern Bool _allocate_on_heap;
++
++typedef void (*AllocationListener)( void*, void* );
++
++void vexInitialListener ( void*, void* );
++void vexInitialListener( void *userdata, void *data )
++{
++   return;
++}
++
++void *             _global_listener_data  = NULL;
++AllocationListener _global_listener_func  = &vexInitialListener;
++
++void LibVEX_registerAllocationListener ( void *userdata, AllocationListener listener )
++{
++   _global_listener_data = userdata;
++   _global_listener_func = listener;
++}
++
++void* LibVEX_Alloc_inline ( SizeT nbytes )
++{
++   struct align {
++      char c;
++      union {
++         char c;
++         short s;
++         int i;
++         long l;
++         long long ll;
++         float f;
++         double d;
++         /* long double is currently not used and would increase alignment
++            unnecessarily. */
++         /* long double ld; */
++         void *pto;
++         void (*ptf)(void);
++      } x;
++   };
++
++   /* Make sure the compiler does no surprise us */
++   vassert(offsetof(struct align,x) <= REQ_ALIGN);
++
++   if(_allocate_on_heap) {
++      void *data = malloc(nbytes);
++
++      _global_listener_func(_global_listener_data, data);
++      return data;
++   }
++
++#if 0
++  /* Nasty debugging hack, do not use. */
++  return malloc(nbytes);
++#else
++   HChar* curr;
++   HChar* next;
++   SizeT  ALIGN;
++   ALIGN  = offsetof(struct align,x) - 1;
++   nbytes = (nbytes + ALIGN) & ~ALIGN;
++   curr   = private_LibVEX_alloc_curr;
++   next   = curr + nbytes;
++   if (next >= private_LibVEX_alloc_last)
++      private_LibVEX_alloc_OOM();
++   private_LibVEX_alloc_curr = next;
++   return curr;
++#endif
++}
++
+ /*---------------------------------------------------------*/
+ /*--- Storage                                           ---*/
+ /*---------------------------------------------------------*/
+@@ -75,6 +143,7 @@
+ 
+ static VexAllocMode mode = VexAllocModeTEMP;
+ 
++
+ void vexAllocSanityCheck ( void )
+ {
+    vassert(temporary_first == &temporary[0]);
+Index: priv/main_util.h
+===================================================================
+--- priv/main_util.h	(revision 3203)
++++ priv/main_util.h	(working copy)
+@@ -122,47 +122,8 @@
+    boundary. */
+ #define REQ_ALIGN 8
+ 
+-static inline void* LibVEX_Alloc_inline ( SizeT nbytes )
+-{
+-   struct align {
+-      char c;
+-      union {
+-         char c;
+-         short s;
+-         int i;
+-         long l;
+-         long long ll;
+-         float f;
+-         double d;
+-         /* long double is currently not used and would increase alignment
+-            unnecessarily. */
+-         /* long double ld; */
+-         void *pto;
+-         void (*ptf)(void);
+-      } x;
+-   };
++void* LibVEX_Alloc_inline ( SizeT );
+ 
+-   /* Make sure the compiler does no surprise us */
+-   vassert(offsetof(struct align,x) <= REQ_ALIGN);
+-
+-#if 0
+-  /* Nasty debugging hack, do not use. */
+-  return malloc(nbytes);
+-#else
+-   HChar* curr;
+-   HChar* next;
+-   SizeT  ALIGN;
+-   ALIGN  = offsetof(struct align,x) - 1;
+-   nbytes = (nbytes + ALIGN) & ~ALIGN;
+-   curr   = private_LibVEX_alloc_curr;
+-   next   = curr + nbytes;
+-   if (next >= private_LibVEX_alloc_last)
+-      private_LibVEX_alloc_OOM();
+-   private_LibVEX_alloc_curr = next;
+-   return curr;
+-#endif
+-}
+-
+ /* Misaligned memory access support. */
+ 
+ extern UInt  read_misaligned_UInt_LE  ( void* addr );
+Index: pub/libvex_ir.h
+===================================================================
+--- pub/libvex_ir.h	(revision 3203)
++++ pub/libvex_ir.h	(working copy)
+@@ -2992,6 +2992,12 @@
+ /* Deep-copy an IRSB */
+ extern IRSB* deepCopyIRSB ( const IRSB* );
+ 
++/* Deep-copy an IRSB onto the heap */
++extern IRSB* deepCopyIRSB_Heap ( const IRSB* );
++
++typedef void (*AllocationListener)( void*, void* );
++extern void LibVEX_registerAllocationListener ( void*, AllocationListener );
++
+ /* Deep-copy an IRSB, except for the statements list, which set to be
+    a new, empty, list of statements. */
+ extern IRSB* deepCopyIRSBExceptStmts ( const IRSB* );
