@@ -1,0 +1,2 @@
+libmusicbrainz_source.tar.gz filter=lfs diff=lfs merge=lfs -text
+libmusicbrainz5cc.so.2.0.0 filter=lfs diff=lfs merge=lfs -text
