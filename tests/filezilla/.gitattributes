@@ -1,0 +1,2 @@
+filezilla filter=lfs diff=lfs merge=lfs -text
+filezilla_source.tar.gz filter=lfs diff=lfs merge=lfs -text
