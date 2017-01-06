@@ -1,0 +1,94 @@
+6f6bb0 util::AutoMultiWriteLock3
+4d5a10 com::SafeArray<IDHCPServer*, com::SafeIfaceArrayTraits<IDHCPServer> >
+4c0d50 nsISupports
+4c0f30 com::SafeIfaceArray<IGuestFile>
+4dd4b0 com::SafeArray<IMediumAttachment*, com::SafeIfaceArrayTraits<IMediumAttachment> >
+4d5850 com::SafeIfaceArray<IExtPack>
+4d6890 com::SafeArray<IPerformanceMetric*, com::SafeIfaceArrayTraits<IPerformanceMetric> >
+6f6c30 util::RWLockHandle
+4d2990 com::SafeIfaceArray<IBandwidthGroup>
+4c1a50 CComObject<ListenerImpl<GuestProcessEventListener, void*> >
+4d2a90 com::SafeIfaceArray<IUSBController>
+4d2b90 com::SafeIfaceArray<IPCIDeviceAttachment>
+4d5950 com::SafeIfaceArray<IMachine>
+6f6c90 util::WriteLockHandle
+4b7450 com::SafeIfaceArray<IVirtualSystemDescription>
+4ba710 com::SafeArray<unsigned short const*, com::SafeArrayTraits<unsigned short const*> >
+4c1830 GuestListenerBase
+6f6870 nsCOMPtr_helper
+4c1950 ListenerImpl<GuestFileEventListener, void*>
+4d5a50 com::SafeIfaceArray<IDHCPServer>
+4c0e70 com::SafeArray<IGuestProcess*, com::SafeIfaceArrayTraits<IGuestProcess> >
+4b3190 com::Utf8Str
+4bc9f0 com::SafeArray<IMedium*, com::SafeIfaceArrayTraits<IMedium> >
+6f6b70 util::AutoMultiWriteLock2
+6f6ad0 util::LockHandle
+4b7490 com::SafeArray<IMediumFormat*, com::SafeIfaceArrayTraits<IMediumFormat> >
+4d2c90 com::SafeIfaceArray<IAdditionsFacility>
+4c1a10 CComObject<ListenerImpl<GuestFileEventListener, void*> >
+4c0ef0 com::SafeArray<IGuestFile*, com::SafeIfaceArrayTraits<IGuestFile> >
+4d5710 com::SafeArray<IHostNetworkInterface*, com::SafeIfaceArrayTraits<IHostNetworkInterface> >
+6f6d70 util::AutoWriteLockBase
+4d5810 com::SafeArray<IExtPack*, com::SafeIfaceArrayTraits<IExtPack> >
+4d6850 com::SafeIfaceArray<nsISupports>
+4c1910 ListenerImpl<GuestProcessEventListener, void*>
+4c0eb0 com::SafeIfaceArray<IGuestProcess>
+4b3170 RTCString
+4b9a10 com::SafeArray<unsigned char, com::SafeArrayTraits<unsigned char> >
+4d2a50 com::SafeArray<IUSBController*, com::SafeIfaceArrayTraits<IUSBController> >
+4d2950 com::SafeArray<IBandwidthGroup*, com::SafeIfaceArrayTraits<IBandwidthGroup> >
+4d5910 com::SafeArray<IMachine*, com::SafeIfaceArrayTraits<IMachine> >
+4b9b10 com::SafeIfaceArray<IUSBDevice>
+4d2b50 com::SafeArray<IPCIDeviceAttachment*, com::SafeIfaceArrayTraits<IPCIDeviceAttachment> >
+4d2c50 com::SafeArray<IAdditionsFacility*, com::SafeIfaceArrayTraits<IAdditionsFacility> >
+4dd4f0 com::SafeIfaceArray<IMediumAttachment>
+4b74d0 com::SafeIfaceArray<IMediumFormat>
+4c0dd0 com::ProgressErrorInfo
+4c19d0 ListenerImpl<GuestSessionEventListener, void*>
+4c18d0 GuestSessionEventListener
+4b52f0 com::Utf8StrFmt
+6f6b30 util::AutoWriteLock
+4d2b10 com::SafeIfaceArray<IUSBDeviceFilter>
+4c0e30 com::SafeIfaceArray<IGuestSession>
+4c0fb0 CComObject<ListenerImpl<GuestEventListener, void*> >
+4d57d0 com::SafeIfaceArray<IHostUSBDeviceFilter>
+4d6810 com::SafeArray<nsISupports*, com::SafeIfaceArrayTraits<nsISupports> >
+4d58d0 com::SafeIfaceArray<IHostVideoInputDevice>
+6f6910 nsIDirectoryServiceProvider
+6f6d30 util::AutoReadLock
+4d2910 com::SafeIfaceArray<ISnapshot>
+4d59d0 com::SafeIfaceArray<IGuestOSType>
+4d2a10 com::SafeIfaceArray<IStorageController>
+4b9ad0 com::SafeArray<IUSBDevice*, com::SafeIfaceArrayTraits<IUSBDevice> >
+4d2c10 com::SafeIfaceArray<ISharedFolder>
+6f6950 com::DirectoryServiceProvider
+4b7350 com::SafeArray<int, com::SafeArrayTraits<int> >
+4c0d90 IEventListener
+4c1890 GuestProcessEventListener
+4b9a90 com::SafeIfaceArray<IHostUSBDevice>
+4c0f70 ListenerImpl<GuestEventListener, void*>
+4c1990 GuestEventListener
+4d5ad0 com::SafeIfaceArray<INATNetwork>
+6f6bf0 util::AutoMultiWriteLock4
+4b7410 com::SafeArray<IVirtualSystemDescription*, com::SafeIfaceArrayTraits<IVirtualSystemDescription> >
+4b7390 com::SafeArray<unsigned int, com::SafeArrayTraits<unsigned int> >
+6f6cf0 util::AutoLockBase
+4d5790 com::SafeArray<IHostUSBDeviceFilter*, com::SafeIfaceArrayTraits<IHostUSBDeviceFilter> >
+4d28d0 com::SafeArray<ISnapshot*, com::SafeIfaceArrayTraits<ISnapshot> >
+4d5890 com::SafeArray<IHostVideoInputDevice*, com::SafeIfaceArrayTraits<IHostVideoInputDevice> >
+4d68d0 com::SafeIfaceArray<IPerformanceMetric>
+4b31b0 com::ErrorInfo
+4d5990 com::SafeArray<IGuestOSType*, com::SafeIfaceArrayTraits<IGuestOSType> >
+4d29d0 com::SafeArray<IStorageController*, com::SafeIfaceArrayTraits<IStorageController> >
+4c1a90 CComObject<ListenerImpl<GuestSessionEventListener, void*> >
+4d2ad0 com::SafeArray<IUSBDeviceFilter*, com::SafeIfaceArrayTraits<IUSBDeviceFilter> >
+4d2bd0 com::SafeArray<ISharedFolder*, com::SafeIfaceArrayTraits<ISharedFolder> >
+4c1850 GuestFileEventListener
+4b73d0 com::SafeArray<unsigned short*, com::SafeArrayTraits<unsigned short*> >
+4d5750 com::SafeIfaceArray<IHostNetworkInterface>
+6f68b0 com::NativeEventQueue
+4c0df0 com::SafeArray<IGuestSession*, com::SafeIfaceArrayTraits<IGuestSession> >
+4c2190 com::SafeArray<long, com::SafeArrayTraits<long> >
+4bca30 com::SafeIfaceArray<IMedium>
+4d5a90 com::SafeArray<INATNetwork*, com::SafeIfaceArrayTraits<INATNetwork> >
+4b9a50 com::SafeArray<IHostUSBDevice*, com::SafeIfaceArrayTraits<IHostUSBDevice> >
