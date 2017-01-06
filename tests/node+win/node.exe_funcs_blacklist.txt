@@ -1,0 +1,3 @@
+node.exe
+606C4C
+A12C0
