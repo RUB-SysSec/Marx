@@ -1,0 +1,2 @@
+mysqld filter=lfs diff=lfs merge=lfs -text
+mysql-5.7.11.tar.gz filter=lfs diff=lfs merge=lfs -text
