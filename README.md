@@ -11,6 +11,7 @@ Folder structure as follows:
 - `src` contains the source code itself,
 - `patch` contains a patch to enable manual memory management for VEX,
 - `ida_export` contains an IDA script creating a `.dmp` file,
+- `tests` contains sources and binaries of the evaluation,
 - `scripts` contains helper scripts.
 
 
