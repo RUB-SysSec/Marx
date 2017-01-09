@@ -515,6 +515,7 @@ def main():
 
         # TODO
         # Write logic that creates addresses of blacklisted functions.
+        # (needed for Windows binaries)
 
     print('\nExported %d function blacklist.' % counter)
 
