@@ -295,6 +295,7 @@ def check_entry_valid_msvc64(addr, qword):
     return False
 
 
+# TODO: function only works if RTTI is enabled in windows binary.
 def get_vtables_msvc64():
 
     vtables_offset_to_top = dict()
@@ -513,8 +514,7 @@ def main():
             f.write("%x\n" % pure_virtual_addr)
 
         # TODO
-        # Write logic that creates addresses of blacklisted functions
-        # (for Windows needed).
+        # Write logic that creates addresses of blacklisted functions.
 
     print('\nExported %d function blacklist.' % counter)
 
