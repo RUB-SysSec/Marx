@@ -1,2 +1,0 @@
-mongod.exe filter=lfs diff=lfs merge=lfs -text
-mongod.pdb filter=lfs diff=lfs merge=lfs -text

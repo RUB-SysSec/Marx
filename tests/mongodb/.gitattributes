@@ -1,2 +1,0 @@
-mongod filter=lfs diff=lfs merge=lfs -text
-mongodb-src-r3.2.4.zip filter=lfs diff=lfs merge=lfs -text

@@ -1,3 +1,0 @@
-mysql-5.7.11.zip filter=lfs diff=lfs merge=lfs -text
-mysqld.exe filter=lfs diff=lfs merge=lfs -text
-mysqld.pdb filter=lfs diff=lfs merge=lfs -text

@@ -1,2 +1,0 @@
-node.exe filter=lfs diff=lfs merge=lfs -text
-node.pdb filter=lfs diff=lfs merge=lfs -text

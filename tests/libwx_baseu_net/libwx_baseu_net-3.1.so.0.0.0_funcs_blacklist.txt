@@ -1,2 +1,0 @@
-libwx_baseu_net-3.1.so.0.0.0
-24BB30

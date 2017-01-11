@@ -1,2 +1,0 @@
-gcc-4.8_4.8.2.orig.tar.gz filter=lfs diff=lfs merge=lfs -text
-libstdc++.so.6.0.18 filter=lfs diff=lfs merge=lfs -text

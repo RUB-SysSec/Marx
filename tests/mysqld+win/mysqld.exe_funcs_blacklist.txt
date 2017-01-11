@@ -1,2 +1,0 @@
-mysqld.exe
-B2D3D8

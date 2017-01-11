@@ -1,2 +1,0 @@
-VBoxXPCOM.so
-311A38
