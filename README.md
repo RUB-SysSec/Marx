@@ -11,7 +11,6 @@ Folder structure as follows:
 - `src` contains the source code itself,
 - `patch` contains a patch to enable manual memory management for VEX,
 - `ida_export` contains an IDA script creating a `.dmp` file,
-- `tests` contains sources and binaries of the evaluation,
 - `scripts` contains helper scripts.
 
 
@@ -99,3 +98,8 @@ during the analysis) that are in multiple vtables but do not belong together.
 This is the case for example for short functions that do just zero a
 register and do nothing more. See for further details the helper script
 `ida_win_find_blacklist_functions.py`.
+
+
+## Evaluation Data
+
+The data used to evaluate Marx is available at [zenodo.org](https://zenodo.org/record/238686).
