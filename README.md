@@ -4,6 +4,11 @@ Uncovering Class Hierarchies in C++ Programs
 This repository holds the programs used for the NDSS 2017 paper [MARX: Uncovering Class Hierarchies in C++ Programs](https://www.syssec.rub.de/research/publications/marx/).
 
 
+## Evaluation Data
+
+The data used to evaluate Marx is available at [zenodo.org](https://zenodo.org/record/238686).
+
+
 ## Organization
 
 Folder structure as follows:
@@ -98,8 +103,3 @@ during the analysis) that are in multiple vtables but do not belong together.
 This is the case for example for short functions that do just zero a
 register and do nothing more. See for further details the helper script
 `ida_win_find_blacklist_functions.py`.
-
-
-## Evaluation Data
-
-The data used to evaluate Marx is available at [zenodo.org](https://zenodo.org/record/238686).
