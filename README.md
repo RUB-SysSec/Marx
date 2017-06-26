@@ -94,6 +94,8 @@ When the config file is created, Marx can be executed by issuing the following c
 ./marx ../tests/filezilla/config.cfg
 ```
 
+Afterwards, the IDAPython script found in `ida_import` can be used to import the analyzed data back to IDA.
+
 NOTE: Windows binaries have to be loaded at base address 0x0 (or rebased)
 in IDA before exporting them. Also, the IDAPython script only supports Windows
 binaries which are compiled with RTTI. Furthermore, specific functions
