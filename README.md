@@ -77,7 +77,7 @@ binary lies in. Remember to set the pure_virtual_addr in the IDAPython script
 before executing it. In case of Windows, the function is called `_purecall`.
 In Linux, it is called `__cxa_pure_virtual`.
 
-After exporting all data, a config file for Marx has to be created.
+After exporting all data, a config file for Marx has to be created manually.
 A config file looks like the following:
 ```
 MODULENAME filezilla
@@ -87,7 +87,7 @@ NEWOPERATORS 2 431F80 432C00
 EXTERNALMODULES 8 ../tests/libwx_gtk2u_aui/libwx_gtk2u_aui-3.1.so.0.0.0 ../tests/libwx_gtk2u_xrc/libwx_gtk2u_xrc-3.1.so.0.0.0 ../tests/libwx_gtk2u_adv/libwx_gtk2u_adv-3.1.so.0.0.0 ../tests/libwx_gtk2u_core/libwx_gtk2u_core-3.1.so.0.0.0 ../tests/libwx_baseu_net/libwx_baseu_net-3.1.so.0.0.0 ../tests/libwx_baseu/libwx_baseu-3.1.so.0.0.0 ../tests/libwx_gtk2u_html/libwx_gtk2u_html-3.1.so.0.0.0 ../tests/libwx_baseu_xml/libwx_baseu_xml-3.1.so.0.0.0
 ```
 
-Further examples of config files can be seen in the `tests` directory.
+Further examples of config files can be seen in the evaluation data at [zenodo.org](https://zenodo.org/record/238686).
 
 When the config file is created, Marx can be executed by issuing the following command:
 ```
