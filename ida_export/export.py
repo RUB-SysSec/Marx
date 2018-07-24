@@ -477,7 +477,7 @@ def main():
     dump += packed_function_count
     dump += functions_dump
 
-    with open(GetInputFile() + '.dmp', 'w') as f:
+    with open(GetInputFile() + '.dmp', 'wb') as f:
         f.write(dump)
 
     print('\nExported %d functions.' % function_count)
