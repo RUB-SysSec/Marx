@@ -1,7 +1,7 @@
 # Marx
 Uncovering Class Hierarchies in C++ Programs
 
-This repository holds the programs used for the NDSS 2017 paper [MARX: Uncovering Class Hierarchies in C++ Programs](https://www.syssec.rub.de/research/publications/marx/).
+This repository holds the programs used for the NDSS 2017 paper [MARX: Uncovering Class Hierarchies in C++ Programs](https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/marx-uncovering-class-hierarchies-c-programs/).
 
 
 ## Evaluation Data
